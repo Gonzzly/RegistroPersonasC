@@ -1,24 +1,32 @@
 package Models;
 
 
+import android.net.Uri;
+
 import java.io.Serializable;
+import java.util.List;
 
 public class Persona implements Serializable {
     private String nombre;
     private String apellidos;
+    private String sexo;
+    private String ciudad;
     private  int edad;
     private String dNI;
 
     private float peso;
     private float altura;
-
-    public Persona(String nombre, String apellidos, int edad, String dNI, float peso, float altura) {
+    private Uri foto;
+    public Persona(String nombre, String apellidos,String sexo,String ciudad, int edad, String dNI, float peso, float altura, Uri foto) {
         this.nombre = nombre;
         this.apellidos = apellidos;
+        this.sexo=sexo;
+        this.ciudad = ciudad;
         this.edad = edad;
         this.dNI = dNI;
         this.peso = peso;
         this.altura = altura;
+        this.foto = foto;
     }
 
     public String getNombre() {
@@ -63,6 +71,21 @@ public class Persona implements Serializable {
 
     public float getAltura() {
         return altura;
+    }
+    public String getSexo() {
+        return sexo;
+    }
+
+    public void setSexo(String sexo) {
+        this.sexo = sexo;
+    }
+
+    public String getCiudad() {
+        return ciudad;
+    }
+
+    public void setCiudad(String ciudad) {
+        this.ciudad = ciudad;
     }
 
     public void setAltura(float altura) {
@@ -110,4 +133,6 @@ public class Persona implements Serializable {
                 " tiene tipo de peso "+tipoPeso+
                 " y es "+(mayorEdad()?" mayor de edad":" menor de edad");
     }
+
+
 }

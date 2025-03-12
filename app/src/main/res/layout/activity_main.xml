@@ -5,20 +5,21 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    android:backgroundTint="@color/Gris"
+    tools:context=".MainActivity"
+    tools:layout_editor_absoluteX="-30dp"
+    tools:layout_editor_absoluteY="3dp">
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="Registro Persona"
         style="@style/Texto_Titulos"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_width="257dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="@dimen/Separacion_Vertical"
+        android:text="Registro Persona"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.064" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
         android:id="@+id/txtNombres"
@@ -30,6 +31,7 @@
         android:inputType="text"
         android:textColor="@color/TextoImput"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
 
@@ -43,12 +45,48 @@
         android:inputType="text"
         android:textColor="@color/TextoImput"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.203"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtNombres" />
 
+    <RadioGroup
+        android:id="@+id/rgSexo"
+        android:layout_width="182dp"
+        android:layout_height="106dp"
+        android:layout_marginTop="@dimen/Separacion_Vertical"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtApellidos">
+
+        <RadioButton
+            android:id="@+id/rbFemenino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Femenino" />
+
+        <RadioButton
+            android:id="@+id/rbMasculino"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Masculino" />
+
+    </RadioGroup>
+
+    <Spinner
+        android:id="@+id/sp_Ciudad"
+        android:layout_width="200dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="20dp"
+        android:background="@color/Gris"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.194"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rgSexo" />
+
     <EditText
         android:id="@+id/txtEdad"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginTop="@dimen/Separacion_Vertical"
         android:ems="10"
@@ -57,12 +95,41 @@
         android:maxLength="3"
         android:textColor="@color/TextoImput"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtApellidos" />
+        app:layout_constraintTop_toBottomOf="@+id/sp_Ciudad" />
+
+    <EditText
+        android:id="@+id/txtPeso"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/Separacion_Vertical"
+        android:ems="10"
+        android:hint="Ingrese Peso"
+        android:inputType="numberDecimal"
+        android:textColor="@color/TextoImput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDni" />
+
+    <EditText
+        android:id="@+id/txtAltura"
+        android:layout_width="150dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="@dimen/Separacion_Vertical"
+        android:ems="10"
+        android:hint="Ingrese Altura"
+        android:inputType="numberDecimal"
+        android:textColor="@color/TextoImput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
 
     <EditText
         android:id="@+id/txtDni"
-        android:layout_width="wrap_content"
+        android:layout_width="150dp"
         android:layout_height="48dp"
         android:layout_marginTop="@dimen/Separacion_Vertical"
         android:ems="10"
@@ -71,18 +138,36 @@
         android:maxLength="8"
         android:textColor="@color/TextoImput"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txtEdad" />
 
-    <androidx.constraintlayout.widget.Group
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ImageButton
+        android:id="@+id/imgFoto"
+        android:layout_width="170dp"
+        android:layout_height="183dp"
+        android:layout_marginTop="28dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/click"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.44"
+        app:layout_constraintStart_toEndOf="@+id/txtPeso"
+        app:layout_constraintTop_toBottomOf="@+id/sp_Ciudad"
+        tools:ignore="SpeakableTextPresentCheck" />
 
-    <androidx.constraintlayout.widget.Group
-        android:layout_width="23dp"
-        android:layout_height="27dp" />
+    <TextView
+        android:id="@+id/tvImgError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="11dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="@+id/imgFoto"
+        app:layout_constraintStart_toStartOf="@+id/imgFoto"
+        app:layout_constraintTop_toBottomOf="@+id/imgFoto"
+        tools:ignore="MissingConstraints" />
 
     <LinearLayout
+        android:id="@+id/linearLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/Separacion_Vertical"
@@ -106,32 +191,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:text="Listar" />
+
     </LinearLayout>
-
-    <EditText
-        android:id="@+id/txtPeso"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="@dimen/Separacion_Vertical"
-        android:ems="10"
-        android:hint="Ingrese Peso"
-        android:inputType="numberDecimal"
-        android:textColor="@color/TextoImput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtDni" />
-
-    <EditText
-        android:id="@+id/txtAltura"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginTop="@dimen/Separacion_Vertical"
-        android:ems="10"
-        android:hint="Ingrese Altura"
-        android:inputType="numberDecimal"
-        android:textColor="@color/TextoImput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtPeso" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -8,13 +8,13 @@
     <style name="Theme.RegistroPersonas" parent="Base.Theme.RegistroPersonas" />
     <style name="Texto_Titulos">
         <item name="android:textColor">@color/Red</item>
-        <item name="android:textSize">18sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:shadowColor">@color/Gris</item>
         <item name="android:shadowDx">8</item>
         <item name="android:shadowDy">8</item>
         <item name="android:shadowRadius">8</item>
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">28sp</item>
+        <item name="android:textAlignment">center</item>
     </style>
 
     <style name="Theme.lista" parent="Base.Theme.RegistroPersonas" />
