@@ -16,4 +16,9 @@
         <item name="android:shadowRadius">8</item>
         <item name="android:textSize">40sp</item>
     </style>
+
+    <style name="Theme.lista" parent="Base.Theme.RegistroPersonas" />
+    <style name="Texto">
+        <item name="android:textColor">@color/black</item>
+    </style>
 </resources>

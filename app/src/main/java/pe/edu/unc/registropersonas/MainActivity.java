@@ -49,24 +49,65 @@ public class MainActivity extends AppCompatActivity {
         btnRegistrar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                RegistrarPersona();
+                    RegistrarPersona();
             }
         });
         listPersonas = new ArrayList<>();
     }
     public void RegistrarPersona(){
-        Persona persona = new Persona(txtNombre.getText().toString(),txtApellido.getText().toString(),Integer.parseInt(txtEdad.getText().toString()),txtDNI.getText().toString(),Float.parseFloat(txtPeso.getText().toString()),Float.parseFloat(txtAltura.getText().toString()));
+        if (Validar())
+            return;
+            Persona persona = new Persona(txtNombre.getText().toString(), txtApellido.getText().toString(), Integer.parseInt(txtEdad.getText().toString()), txtDNI.getText().toString(), Float.parseFloat(txtPeso.getText().toString()), Float.parseFloat(txtAltura.getText().toString()));
 
+            if (persona.verificarDNI()) {
+                Toast.makeText(this, "RegistroCorrecto" + persona.toString(), Toast.LENGTH_SHORT).show();
+                listPersonas.add(persona);
+                limpiar();
 
-        if (persona.verificarDNI()) {
-            Toast.makeText(this, "RegistroCorrecto"+persona.toString(), Toast.LENGTH_SHORT).show();
-            listPersonas.add(persona);
-        }else {
-            Toast.makeText(this, "DNI Invalido", Toast.LENGTH_SHORT).show();
-            txtDNI.findFocus();
-            limpiar();
-        }
+            }
+            else {
+                Toast.makeText(this, "DNI Invalido", Toast.LENGTH_SHORT).show();
+                txtDNI.requestFocus();
+                txtDNI.setError("¡Compleata Aqui!");
+                //limpiar();
+            }
     }
+
+    private boolean Validar() {
+        if (txtNombre.getText().toString().trim().isEmpty()){
+            txtNombre.setError("Campo Obligatorio");
+            txtNombre.requestFocus();
+            return true;
+        }
+        if (txtApellido.getText().toString().trim().isEmpty()){
+            txtApellido.setError("Campo Obligatorio");
+            txtApellido.requestFocus();
+            return true;
+        }
+        if (txtEdad.getText().toString().trim().isEmpty()){
+            txtEdad.setError("Campo Obligatorio");
+            txtEdad.requestFocus();
+            return true;
+        }
+        if (txtDNI.getText().toString().trim().isEmpty()){
+            txtDNI.setError("Campo Obligatorio");
+            txtDNI.requestFocus();
+            return true;
+        }
+        if (txtPeso.getText().toString().trim().isEmpty()){
+            txtPeso.setError("Campo Obligatorio");
+            txtPeso.requestFocus();
+            return true;
+        }
+        if (txtAltura.getText().toString().trim().isEmpty()){
+            txtAltura.setError("Campo Obligatorio");
+            txtAltura.requestFocus();
+            return true;
+        }
+
+        return false;
+    }
+
 
     private void limpiar() {
         txtNombre.setText("");
@@ -78,8 +119,10 @@ public class MainActivity extends AppCompatActivity {
         txtNombre.requestFocus();
     }
 
-    public void ListarPersonas(){
-
+    public void ListarPersonas() {
+        Intent oIntento = new Intent(MainActivity.this, Actividad_ListaPersona.class);
+        oIntento.putExtra("lista_p", new ArrayList<>(listPersonas)); // Enviar la lista correctamente
+        startActivity(oIntento); // Usar startActivity en lugar de startActivities
     }
 
 }

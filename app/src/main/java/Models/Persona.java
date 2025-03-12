@@ -1,6 +1,9 @@
 package Models;
 
-public class Persona {
+
+import java.io.Serializable;
+
+public class Persona implements Serializable {
     private String nombre;
     private String apellidos;
     private  int edad;
@@ -86,7 +89,6 @@ public class Persona {
     public boolean verificarDNI(){
         if (dNI.length() ==8)
             return true;
-        else
         return false;
     }
 
