@@ -6,4 +6,7 @@
     <color name="Gris">#959090</color>
     <color name="TextoImput">#2072ED</color>
     <color name="Yellow">#FFC107</color>
+    <color name="PrimaryColor">#2196F3</color>
+    <color name="PrimaryColorDark">#1976D2</color>
+
 </resources>

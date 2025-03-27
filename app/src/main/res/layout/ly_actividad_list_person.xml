@@ -9,26 +9,37 @@
 
     <TextView
         android:id="@+id/textView2"
+        style="@style/Texto_Titulos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/Separacion_Vertical"
         android:text="Lista Personas"
-        style="@style/Texto_Titulos"
+        android:layout_marginTop="@dimen/Separacion_Vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/tbListPerson" />
 
     <ListView
         android:id="@+id/lvListaPerson"
         style="@style/Texto"
-        android:layout_width="409dp"
-        android:layout_height="672dp"
-        android:layout_marginStart="1dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
         android:layout_marginTop="@dimen/Separacion_Vertical"
-        android:layout_marginEnd="1dp"
+        android:layout_marginEnd="5dp"
         android:dividerHeight="5dp"
         android:divider="@color/Yellow"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbListPerson"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/PrimaryColor"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

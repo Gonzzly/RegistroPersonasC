@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:backgroundTint="@color/Gris"
-    tools:context=".MainActivity"
+    tools:context=".RegistroPersona"
     tools:layout_editor_absoluteX="-30dp"
     tools:layout_editor_absoluteY="3dp">
 
@@ -19,13 +19,14 @@
         android:text="Registro Persona"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbarRegistroPersonas" />
 
     <EditText
         android:id="@+id/txtNombres"
         android:layout_width="wrap_content"
         android:layout_height="48dp"
-        android:layout_marginTop="@dimen/Separacion_Vertical"
+        android:layout_marginTop=
+            "@dimen/Separacion_Vertical"
         android:ems="10"
         android:hint="Ingrese Nombres"
         android:inputType="text"
@@ -143,7 +144,7 @@
         app:layout_constraintTop_toBottomOf="@+id/txtEdad" />
 
     <ImageButton
-        android:id="@+id/imgFoto"
+        android:id="@+id/imgItemFoto"
         android:layout_width="170dp"
         android:layout_height="183dp"
         android:layout_marginTop="28dp"
@@ -161,9 +162,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="11dp"
         android:text="TextView"
-        app:layout_constraintEnd_toEndOf="@+id/imgFoto"
-        app:layout_constraintStart_toStartOf="@+id/imgFoto"
-        app:layout_constraintTop_toBottomOf="@+id/imgFoto"
+        app:layout_constraintEnd_toEndOf="@+id/imgItemFoto"
+        app:layout_constraintStart_toStartOf="@+id/imgItemFoto"
+        app:layout_constraintTop_toBottomOf="@+id/imgItemFoto"
         tools:ignore="MissingConstraints" />
 
     <LinearLayout
@@ -193,5 +194,15 @@
             android:text="Listar" />
 
     </LinearLayout>
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarRegistroPersonas"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
